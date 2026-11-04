@@ -38,11 +38,6 @@ El proyecto incluye `lib/sqlite-jdbc-3.46.1.3.jar` y la configuración de NetBea
 - `lib/`: bibliotecas externas.
 - `nbproject/`: configuración del proyecto NetBeans.
 
-## Seguridad antes de publicar
-
-- No agregues contraseñas, archivos de configuración privados ni bases de datos con información real.
-- Revisa los cambios antes de hacer **Commit**.
-- Comparte el repositorio solo con integrantes autorizados.
 
 ## Equipo
 
