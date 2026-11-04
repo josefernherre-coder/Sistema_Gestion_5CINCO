@@ -1,0 +1,1 @@
+La base 5CINCO.db no se incluye en este paquete porque contiene información empresarial y documentos. Solicita una copia de desarrollo autorizada o anonimizada y ubícala en esta carpeta para ejecutar la aplicación.
