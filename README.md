@@ -46,4 +46,8 @@ El proyecto incluye `lib/sqlite-jdbc-3.46.1.3.jar` y la configuración de NetBea
 
 ## Equipo
 
-Completar con los nombres de los integrantes.
+Jose Fernando Herreño Acuña
+
+Andrés Eduardo Hernández Ochoa
+
+Miguel Ángel Herrera Viviescas
