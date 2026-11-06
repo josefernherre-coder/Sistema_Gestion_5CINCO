@@ -1,0 +1,15 @@
+# Base de datos REAL de la empresa (contiene datos de clientes, contratos, empleados y PDF): NUNCA subir
+5CINCO.db
+5CINCO.db-journal
+*.db-wal
+*.db-shm
+
+# NetBeans / Ant
+build/
+dist/
+nbproject/private/
+
+# Demo web
+web/data/
+web/out/
+*.class
