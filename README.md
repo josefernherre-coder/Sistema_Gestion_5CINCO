@@ -1,45 +1,74 @@
 # 5CINCO – Sistema de gestión
 
-Aplicación de escritorio desarrollada en Java para apoyar los procesos de gestión de 5CINCO-PROYECTOS Y SERVICIOS S.A.S.
+Aplicativo de escritorio para apoyar la gestión de **5CINCO-PROYECTOS Y SERVICIOS S.A.S.**: clientes, proyectos (propuestas), contratos, empleados, proveedores y costos.
 
-## Tecnologías identificadas en esta versión
+Proyecto integrador – Tecnología en Desarrollo de Sistemas Informáticos, Unidades Tecnológicas de Santander (UTS), Bucaramanga. Feria Systegra UTS 2026.
 
-- Java 17
-- Apache NetBeans (proyecto Java Ant)
-- SQLite mediante JDBC (`sqlite-jdbc-3.46.1.3.jar`)
+**Integrantes:** Jose Fernando Herreño Acuña, Andrés Eduardo Hernández Ochoa, Miguel Ángel Herrera Viviescas.
+**Docente:** Elsa Patricia Carvajal Valero.
 
-> **Importante:** esta versión del código se conecta a SQLite mediante el archivo `5CINCO.db`. Aunque en la planeación académica se había mencionado PostgreSQL, el código incluido en este ZIP no está configurado para PostgreSQL.
+## Descripción
 
-## Abrir el proyecto
+Reemplaza el manejo del negocio en hojas de cálculo por una base de datos relacional con interfaz de escritorio. Funcionalidades principales:
 
-1. Descarga o clona este repositorio.
-2. En NetBeans, selecciona **File > Open Project**.
-3. Selecciona la carpeta `5CINCO`.
-4. Verifica que el proyecto use JDK 17.
-5. Coloca una copia autorizada de `5CINCO.db` en la carpeta raíz del proyecto para ejecutar la aplicación.
+- Inicio de sesión con contraseñas guardadas como hash (PBKDF2-HMAC-SHA256) y dos roles: **superusuario** (datos sensibles, eliminación y gestión de usuarios) y **administrador**.
+- Módulos de registro, consulta, edición y eliminación: clientes, proyectos, contratos, códigos de compra UNSPSC, productos, proveedores, empleados, contratistas y salario mínimo.
+- Asignación de empleados y contratistas por contrato.
+- **Calcular valores:** subtotal, descuento, IVA, retefuente, reteICA y reteIVA por línea, con totales por proyecto o contrato.
+- Valor de participación y su equivalente en SMMLV según el año de terminación del contrato.
+- Reportes de contratos por año o rango de fechas, con exportación a Excel.
+- Gestión de usuarios (crear, cambiar rol, activar/desactivar, restablecer clave).
 
-## Base de datos y privacidad
+## Tecnologías utilizadas
 
-El archivo `5CINCO.db` no se incluye en el repositorio porque la copia entregada contiene registros de clientes, contratos, proveedores, empleados y documentos PDF. No publiques esa base de datos en GitHub, incluso si el repositorio es privado, sin autorización de la empresa.
+- Java 17 y Swing (interfaz gráfica)
+- SQLite 3 mediante JDBC (`sqlite-jdbc-3.46.1.3.jar`, en `lib/`)
+- Apache Ant / Apache NetBeans
+- PlantUML (diagramas del modelo entidad-relación)
 
-Solicita una copia de desarrollo autorizada o una base de datos anonimizada para compartir con el equipo. El archivo local `5CINCO.db` está excluido mediante `.gitignore`.
+> Durante la planeación se consideró PostgreSQL, pero el código está configurado únicamente para SQLite.
 
-## Dependencia JDBC
+## Enlace al aplicativo en funcionamiento
 
-El proyecto incluye `lib/sqlite-jdbc-3.46.1.3.jar` y la configuración de NetBeans referencia esa biblioteca.
+No aplica: 5CINCO es una aplicación de escritorio, por lo que no está desplegada en una URL pública. Se ejecuta de forma local con las instrucciones siguientes y la base de datos de ejemplo.
 
-## Estructura principal
+## Instrucciones de ejecución
 
-- `src/pkg5cinco/`: punto de entrada de la aplicación.
-- `src/datos/`: conexión, autenticación, sesión y acceso a datos.
-- `src/interfaz/`: ventanas, paneles y componentes de la interfaz.
-- `src/reportes/`: generación de reportes.
-- `src/imagenes/`: recursos gráficos.
-- `lib/`: bibliotecas externas.
-- `nbproject/`: configuración del proyecto NetBeans.
+Requisitos: JDK 17 o superior y Apache NetBeans (o Ant).
 
+1. Clona el repositorio y ábrelo en NetBeans (*Archivo > Abrir proyecto*).
+2. **Base de datos de ejemplo:** copia `demo/5CINCO_demo.db` a la raíz del proyecto con el nombre `5CINCO.db`.
+3. Ejecuta el proyecto completo con **F6** (clase principal `pkg5cinco.Main`). No ejecutes `Login.java` directamente, porque no tiene método `main`.
 
-## Equipo
+También se puede ejecutar con Ant: `ant run`.
+
+### Usuarios de la base de ejemplo
+
+| Usuario | Clave | Rol |
+|---|---|---|
+| `demo` | `demo1234` | Superusuario |
+| `admin_demo` | `admin1234` | Administrador |
+
+## Base de datos de ejemplo (NO es la real)
+
+La base real de la empresa (`5CINCO.db`) **no se incluye** en este repositorio porque contiene datos de clientes, contratos, proveedores, empleados y documentos PDF; por eso está en `.gitignore`.
+
+En su lugar, `demo/5CINCO_demo.db` (y su versión en texto `demo/5CINCO_demo.sql`) es una base **ficticia** con la misma estructura y el mismo funcionamiento que la real: 14 tablas, vistas y reglas de cálculo. Todos los nombres, documentos, teléfonos, correos (`@ejemplo.test`) y valores son inventados; los usuarios y claves de la tabla anterior son solo de demostración. Incluye 5 clientes, 5 proyectos, 3 contratos con líneas de cálculo, 8 productos, empleados, contratistas, proveedores, asignaciones y el salario mínimo por año. Se puede modificar libremente sin afectar datos reales.
+
+## Estructura
+
+```
+├── build.xml, manifest.mf, nbproject/   Proyecto Ant / NetBeans
+├── lib/                                 sqlite-jdbc
+├── demo/                                Base de datos ficticia (.db y .sql)
+└── src/
+    ├── pkg5cinco/   Punto de entrada (Main)
+    ├── datos/       Conexión, autenticación, sesión y acceso a datos
+    ├── interfaz/    Pantallas y módulos (Swing)
+    ├── reportes/    Reporte de contratos y exportación a Excel
+    └── imagenes/    Recursos gráficos
+```
+
 
 Jose Fernando Herreño Acuña
 
