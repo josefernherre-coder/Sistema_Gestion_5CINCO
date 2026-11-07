@@ -32,7 +32,7 @@ Reemplaza el manejo del negocio en hojas de cálculo por una base de datos relac
 
 La aplicación real es de escritorio, pero en la carpeta [`web/`](web/) hay una **demo web** con datos ficticios, pensada para abrirse desde el navegador o el celular (por ejemplo, con un QR). Incluye los mismos módulos y reglas de cálculo, con la base `demo/5CINCO_demo.db`; **no usa la base real**.
 
-- Enlace: `https://TU-SERVICIO.onrender.com` *(reemplazar por el enlace que entregue Render)*
+- Enlace: `[https://TU-SERVICIO.onrender.com](https://sistema-gestion-5cinco.onrender.com)` 
 - Usuarios de prueba: ver la tabla de más abajo.
 - Cómo publicarla y ejecutarla: ver [`web/README.md`](web/README.md).
 
