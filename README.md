@@ -9,7 +9,7 @@ Aplicativo para apoyar la gestión de **5CINCO-PROYECTOS Y SERVICIOS S.A.S.**: c
 Proyecto integrador – Tecnología en Desarrollo de Sistemas Informáticos, Institución Universitaria Tecnológica de Santander (UTS), Bucaramanga. Feria Systegra UTS 2026.
 
 **Integrantes:** Jose Fernando Herreño Acuña, Andrés Eduardo Hernández Ochoa, Miguel Ángel Herrera Viviescas.
-**Docentes:** Elsa Patricia Carvajal Valero, Laura Cristina Duarte Quintero.
+**Docentes:** Elsa Patricia Carvajal Valero (Docente de Planeación de Sistemas Informáticos), Laura Cristina Duarte Quintero (Docente de Motores de Bases de Datos).
 
 ## 🌐 Demo en línea
 
